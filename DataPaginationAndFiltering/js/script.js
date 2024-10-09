@@ -12,8 +12,7 @@ const itemsPerPage = 9;
 
 
 const page = document.querySelector('.page');
-// create a variable to calculate the number of pages needed
-const numOfPages = Math.ceil(list.length / itemsPerPage);
+
 // select the element with a class of `link-list` and assign it to a variable
  
 const linkList = document.querySelector(".link-list");
@@ -79,11 +78,12 @@ This function will create and insert/append the elements needed for the paginati
 */
 function addPagination(list) {
    
- 
+ // create a variable to calculate the number of pages needed
+const numOfPages = Math.ceil(list.length / itemsPerPage);
    // set the innerHTML property of the variable you just created to an empty string
    linkList.innerHTML = "";
    // loop over the number of pages needed
-    for(let i =1; i<=numOfPages.length; i++){
+    for(let i =1; i<=numOfPages; i++){
   // creates the elements needed to display the pagination button
       const nuHtml = `<li>
       <button type="button">${i}</button>
